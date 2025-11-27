@@ -30,8 +30,8 @@ const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href="#oracle" className="w-full sm:w-auto px-10 py-4 bg-buruli-gold text-buruli-blue font-bold text-lg rounded-xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)] flex items-center justify-center gap-2">
-            <span>Consult the Oracle</span>
+          <a href="#omuruuli" className="w-full sm:w-auto px-10 py-4 bg-buruli-gold text-buruli-blue font-bold text-lg rounded-xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)] flex items-center justify-center gap-2">
+            <span>Consult Omuruuli</span>
           </a>
           <a href="#history" className="w-full sm:w-auto px-10 py-4 bg-white/10 border border-white/20 text-white font-semibold text-lg rounded-xl hover:bg-white/20 hover:border-white transition-all duration-300 backdrop-blur-md">
             Discover Our Story

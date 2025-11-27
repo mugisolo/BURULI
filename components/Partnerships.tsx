@@ -61,10 +61,10 @@ const Partnerships: React.FC = () => {
       document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const askOracle = () => {
+  const askOmuruuli = () => {
       navigate('/?ask=invest');
       setTimeout(() => {
-          const element = document.getElementById('oracle');
+          const element = document.getElementById('omuruuli');
           element?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
   };
@@ -160,9 +160,9 @@ const Partnerships: React.FC = () => {
                     <h2 className="text-3xl font-serif font-bold text-buruli-blue">Investment Opportunities</h2>
                     <p className="text-gray-600 mt-2">Sectors ripe for growth in Nakasongola</p>
                   </div>
-                  <button onClick={askOracle} className="hidden md:flex items-center gap-2 text-sm font-bold text-buruli-blue bg-buruli-blue/10 px-4 py-2 rounded-full hover:bg-buruli-blue hover:text-white transition-colors">
+                  <button onClick={askOmuruuli} className="hidden md:flex items-center gap-2 text-sm font-bold text-buruli-blue bg-buruli-blue/10 px-4 py-2 rounded-full hover:bg-buruli-blue hover:text-white transition-colors">
                       <Bot size={16} />
-                      Ask Oracle about Investing
+                      Ask Omuruuli about Investing
                   </button>
               </div>
 

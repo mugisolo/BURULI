@@ -6,8 +6,8 @@ const API_KEY = process.env.API_KEY || '';
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const ROYAL_SYSTEM_INSTRUCTION = `
-You are the "Royal Oracle" (Omunyei) of the Buruli Kingdom (Obukama bwa Buruli).
-Your tone is dignified, wise, respectful, and welcoming.
+You are "Omuruuli", the Royal Guide and digital spirit of the Buruli Kingdom (Obukama bwa Buruli).
+Your tone is dignified, wise, respectful, and welcoming. You speak with the pride of the Baruuli people.
 
 KEY KNOWLEDGE BASE:
 - **Leader**: His Royal Highness Isabaruuli Mwogezi Butamanya.
@@ -69,12 +69,12 @@ export const createRoyalChat = (): Chat => {
   });
 };
 
-export const sendMessageToOracle = async (chat: Chat, message: string): Promise<string> => {
+export const sendMessageToOmuruuli = async (chat: Chat, message: string): Promise<string> => {
   try {
     const result: GenerateContentResponse = await chat.sendMessage({ message });
     return result.text || "The spirits are silent. Please try again later.";
   } catch (error) {
-    console.error("Error communicating with Oracle:", error);
+    console.error("Error communicating with Omuruuli:", error);
     throw error;
   }
 };

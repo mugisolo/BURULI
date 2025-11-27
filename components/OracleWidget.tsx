@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Sparkles, User, Bot, Loader2 } from 'lucide-react';
-import { createRoyalChat, sendMessageToOracle } from '../services/geminiService';
+import { createRoyalChat, sendMessageToOmuruuli } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
 const OracleWidget: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Mirembe! I am the Royal Oracle. Ask me about the Isabaruuli, our clans, or the history of Buruli.' }
+    { role: 'model', text: 'Mirembe! I am Omuruuli, your Royal Guide. Ask me about the Isabaruuli, our clans, or the history of Buruli.' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ const OracleWidget: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const responseText = await sendMessageToOracle(chatSession, textToSend);
+      const responseText = await sendMessageToOmuruuli(chatSession, textToSend);
       setMessages(prev => [...prev, { role: 'model', text: responseText }]);
     } catch (error) {
       setMessages(prev => [...prev, { role: 'model', text: "Forgive me, connection to the spirits is weak. Please check your connection.", isError: true }]);
@@ -54,7 +54,7 @@ const OracleWidget: React.FC = () => {
   };
 
   return (
-    <section id="oracle" className="py-20 px-4 bg-buruli-cream relative overflow-hidden">
+    <section id="omuruuli" className="py-20 px-4 bg-buruli-cream relative overflow-hidden">
         {/* Background Patterns */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-buruli-gold/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-buruli-blue/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -64,9 +64,9 @@ const OracleWidget: React.FC = () => {
                 <div className="inline-flex items-center justify-center p-3 bg-buruli-blue rounded-full mb-4 shadow-lg">
                     <Sparkles className="text-buruli-gold h-6 w-6" />
                 </div>
-                <h2 className="text-4xl font-serif font-bold text-buruli-blue mb-3">The Royal Oracle</h2>
+                <h2 className="text-4xl font-serif font-bold text-buruli-blue mb-3">Ask Omuruuli</h2>
                 <p className="text-gray-600 max-w-lg mx-auto">
-                    Powered by AI, the Oracle holds the wisdom of generations. Ask about our traditions, sites, or language.
+                    Powered by AI, Omuruuli holds the wisdom of generations. Ask about our traditions, sites, or language.
                 </p>
             </div>
 
@@ -75,7 +75,7 @@ const OracleWidget: React.FC = () => {
                 <div className="bg-buruli-blue p-4 flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                         <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
-                        <span className="text-buruli-gold font-serif font-bold tracking-wide">Oracle Active</span>
+                        <span className="text-buruli-gold font-serif font-bold tracking-wide">Omuruuli Active</span>
                     </div>
                     <span className="text-xs text-blue-200 uppercase tracking-widest">Gemini 2.5 Flash</span>
                 </div>
